@@ -1,4 +1,5 @@
 import CountdownDisplay from "@/components/countdown-display";
+import HadithCarousel from "@/components/hadist";
 import HeaderNav from "@/components/header-nav";
 import PrayerTimesCard from "@/components/prayer-time";
 import RamadanHero from "@/components/ramadhan-hero";
@@ -12,7 +13,8 @@ export default function HomePage() {
         <RamadanHero />
       </section>
 
-      <section className="w-full max-w-6xl px-6 md:px-10 pb-10">
+      <section className="w-full max-w-6xl px-4 md:px-10 pb-10">
+        {/* Konten Utama 2 Kolom (Countdown dan Waktu Sholat) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div id="countdown" className="w-full">
             <CountdownDisplay />
@@ -22,7 +24,14 @@ export default function HomePage() {
           </div>
         </div>
 
-        <footer className="mt-8 text-center text-sm text-muted-foreground">
+        {/* Konten Tambahan 1 Kolom (Hadits Carousel) */}
+        {/* Diletakkan di bawah grid utama agar selalu tampil penuh lebar setelah grid */}
+        <div id="hadith" className="w-full mt-6">
+          <HadithCarousel />
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-8 text-center text-sm text-gray-500">
           Data sumber waktu sholat: waktu-sholat.vercel.app
         </footer>
       </section>
